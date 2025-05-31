@@ -18,7 +18,7 @@ class Repo2context < Formula
   def install
     virtualenv_create(libexec, "python3.11")
     
-    # Try to install with pre-built wheels first, fall back to source if needed
+    # Install with all extras to get optional dependencies
     system libexec/"bin/pip", "install", "--prefer-binary", "repo2context[all]==0.1.0"
     
     bin.install_symlink libexec/"bin/repo2context"
