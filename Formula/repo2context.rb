@@ -14,16 +14,6 @@ class Repo2context < Formula
     sha256 "e0d8d0ac2f12da61956eb2306b69f9469b42f4deb0f3cb6ed47b9cce9996ced3"
   end
 
-  resource "tiktoken" do
-    url "https://files.pythonhosted.org/packages/source/t/tiktoken/tiktoken-0.9.0.tar.gz"
-    sha256 "d02a5ca6a938e0490e1ff957bc48c8b078c88cb83977be1625b1fd8aac792c5d"
-  end
-
-  resource "openai" do
-    url "https://files.pythonhosted.org/packages/source/o/openai/openai-1.82.1.tar.gz"
-    sha256 "ffc529680018e0417acac85f926f92aa0bbcbc26e82e2621087303c66bc7f95d"
-  end
-
   def install
     virtualenv_install_with_resources
   end
