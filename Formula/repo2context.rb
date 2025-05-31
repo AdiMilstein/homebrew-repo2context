@@ -15,13 +15,18 @@ class Repo2context < Formula
     sha256 "e0d8d0ac2f12da61956eb2306b69f9469b42f4deb0f3cb6ed47b9cce9996ced3"
   end
 
+  resource "tiktoken" do
+    url "https://files.pythonhosted.org/packages/source/t/tiktoken/tiktoken-0.5.2.tar.gz"
+    sha256 "f54c581f134a8ea96ce2023ab221d4d4d81ab614efa0b2fbce926387deb56c80"
+  end
+
+  resource "openai" do
+    url "https://files.pythonhosted.org/packages/source/o/openai/openai-1.82.1.tar.gz"
+    sha256 "ffc529680018e0417acac85f926f92aa0bbcbc26e82e2621087303c66bc7f95d"
+  end
+
   def install
-    virtualenv_create(libexec, "python3.11")
-    
-    # Install with all extras to get optional dependencies
-    system libexec/"bin/pip", "install", "--prefer-binary", "repo2context[all]==0.1.0"
-    
-    bin.install_symlink libexec/"bin/repo2context"
+    virtualenv_install_with_resources
   end
 
   test do
