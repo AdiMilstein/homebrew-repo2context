@@ -21,7 +21,7 @@ class Repo2context < Formula
 
   resource "openai" do
     url "https://files.pythonhosted.org/packages/source/o/openai/openai-1.82.1.tar.gz"
-    sha256 "4d0b524bb4fb8e37b12e2d42e5df7e4e5b1a8b8c8a13f9e1c3a5d5f5c5f5c5f5"
+    sha256 "ffc529680018e0417acac85f926f92aa0bbcbc26e82e2621087303c66bc7f95d"
   end
 
   def install
