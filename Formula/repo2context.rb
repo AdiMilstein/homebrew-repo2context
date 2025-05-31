@@ -15,8 +15,8 @@ class Repo2context < Formula
   end
 
   resource "tiktoken" do
-    url "https://files.pythonhosted.org/packages/source/t/tiktoken/tiktoken-0.5.2.tar.gz"
-    sha256 "f54c581f134a8ea96ce2023ab221d4d4d81ab614efa0b2fbce926387deb56c80"
+    url "https://files.pythonhosted.org/packages/source/t/tiktoken/tiktoken-0.9.0.tar.gz"
+    sha256 "d02a5ca6a938e0490e1ff957bc48c8b078c88cb83977be1625b1fd8aac792c5d"
   end
 
   resource "openai" do
