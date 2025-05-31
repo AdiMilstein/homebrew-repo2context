@@ -1,3 +1,7 @@
+Formula/repo2context.rb
+```ruby
+# byte_count: 848
+# est_tokens: 211
 class Repo2context < Formula
   include Language::Python::Virtualenv
 
@@ -8,7 +12,6 @@ class Repo2context < Formula
   license "MIT"
 
   depends_on "python@3.11"
-  depends_on "rust" => :build
 
   resource "pathspec" do
     url "https://files.pythonhosted.org/packages/source/p/pathspec/pathspec-0.11.2.tar.gz"
@@ -16,12 +19,7 @@ class Repo2context < Formula
   end
 
   def install
-    virtualenv_create(libexec, "python3.11")
-    
-    # Try to install with pre-built wheels first, fall back to source if needed
-    system libexec/"bin/pip", "install", "--prefer-binary", "repo2context[all]==0.1.0"
-    
-    bin.install_symlink libexec/"bin/repo2context"
+    virtualenv_install_with_resources
   end
 
   test do
@@ -30,3 +28,6 @@ class Repo2context < Formula
     assert_match "repo2context", shell_output("#{bin}/repo2context --version")
   end
 end 
+```
+---
+
